@@ -6,7 +6,7 @@ tavi = ["tava"] * 7  # stiva LIFO
 istoric_comenzi = []
 papanasi_inceput = meniu.count("papanasi")
 papanasi_comanda = comenzi.count("papanasi")
-pret_papanasi = preturi[1][0]
+pret_papanasi = preturi[0][1]
 castig_papanasi = papanasi_inceput * pret_papanasi
 print(papanasi_inceput - papanasi_comanda)
 print(papanasi_inceput * pret_papanasi)
@@ -19,8 +19,11 @@ print(cata_ceafa_era_la_inceput * pret_ceafa)
 guias_inceput = meniu.count("guias")
 guias_comenzi = comenzi.count("guias")
 pret_guias = preturi[2][1]
+castig_guias = guias_inceput * pret_guias
+castig_cantina = castig_papanasi + castig_ceafa + castig_guias
 print(guias_inceput - guias_comenzi)
 print(guias_inceput * pret_guias)
+print(castig_cantina)
 student1 = studenti.pop(0)
 comanda1 = comenzi.pop(0)
 print(f"Studentul {student1} a comandat {comanda1}")
@@ -47,19 +50,31 @@ print(f"Studentul {student5} a comandat {comanda5}")
 istoric_comenzi.append([student5,comanda5])
 meniu_set = set(meniu)
 disponibilitate = {produs: produs in meniu_set for produs in comenzi}
-for produs, exista in disponibilitate.items()
+for produs, exista in disponibilitate.items():
     print(f"Produsul '{produs}'{'exista' if exista else 'nu exista'} in meniu.")
 tavi_folosite = 5
 tavi_totale = 7
 print(tavi_totale - tavi_folosite)
- mancare_ieftina = []
-        for mancare_pret in preturi:
-            pret_mancare = mancare_pret[1]
-            nume_mancare = mancare_pret[0]
-            if pret_mancare <= 7:
-                mancare_ieftina.append(nume_mancare)
-                print(mancare_ieftina)
-                print(len(mancare_ieftina))
+
+meniu_papanasi = papanasi_inceput - papanasi_comanda
+meniu_ceafa = cata_ceafa_era_la_inceput - cata_ceafa_s_a_comandat
+meniu_guias = guias_inceput -guias_comenzi
+if meniu_papanasi:
+    print(" Mai este papanasi: True")
+else: print( "Mai este papanasi: False")
+if meniu_guias:
+    print("Mai este guias: True")
+else: print("Mai este guias : False")
+if meniu_ceafa:
+    print("Mai este ceafa: True")
+else: print(" Mai este ceafa: False")
+produse_ieftine = []
+for produs in preturi:
+    nume, pret = produs
+    if pret <= 7:
+        produse_ieftine.append(nume)
+print("Produse din meniu care costă cel mult 7 lei:", produse_ieftine)
+
 
 
 
