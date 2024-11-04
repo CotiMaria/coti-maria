@@ -55,7 +55,6 @@ for produs, exista in disponibilitate.items():
 tavi_folosite = 5
 tavi_totale = 7
 print(tavi_totale - tavi_folosite)
-
 meniu_papanasi = papanasi_inceput - papanasi_comanda
 meniu_ceafa = cata_ceafa_era_la_inceput - cata_ceafa_s_a_comandat
 meniu_guias = guias_inceput -guias_comenzi
