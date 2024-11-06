@@ -1,10 +1,10 @@
-# 1. Lista de cuvinte și alegerea cuvântului la întâmplare
+# 1. Lista de cuvinte și alegerea cuvantului
 import random
 cuvinte = ["python", "programare", "calculator", "date", "algoritm"]
 cuvant_de_ghicit = random.choice(cuvinte)
 progres = ["_" for _ in cuvant_de_ghicit]
 
-# 2. Inițializarea numărului de încercări
+# 2. Am scris cate incercari sunt
 incercari_ramase = 6
 litere_incercate = []
 print(" ".join(progres))
